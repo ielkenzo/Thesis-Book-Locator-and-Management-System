@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Thesis Book Locator and Management System", "Thesis Book Locator and Management System.vbproj", "{53CB2EB5-C83C-4137-9FA5-DE56031722AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53CB2EB5-C83C-4137-9FA5-DE56031722AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53CB2EB5-C83C-4137-9FA5-DE56031722AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53CB2EB5-C83C-4137-9FA5-DE56031722AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53CB2EB5-C83C-4137-9FA5-DE56031722AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42C16B12-ADB9-403A-B4E5-4306A1D2279E}
+	EndGlobalSection
+EndGlobal
