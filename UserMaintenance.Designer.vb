@@ -23,6 +23,7 @@ Partial Class UserMaintenance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -47,15 +48,14 @@ Partial Class UserMaintenance
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -67,6 +67,19 @@ Partial Class UserMaintenance
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1188, 46)
         Me.Panel1.TabIndex = 0
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.remove_button
+        Me.PictureBox3.Location = New System.Drawing.Point(1148, 11)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 1
+        Me.PictureBox3.TabStop = False
         '
         'Panel2
         '
@@ -131,7 +144,7 @@ Partial Class UserMaintenance
         Me.ComboBox1.Items.AddRange(New Object() {"ADMIN", "USERS", "OTHER USERS"})
         Me.ComboBox1.Location = New System.Drawing.Point(23, 608)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(309, 31)
+        Me.ComboBox1.Size = New System.Drawing.Size(309, 25)
         Me.ComboBox1.TabIndex = 14
         '
         'Label7
@@ -141,7 +154,7 @@ Partial Class UserMaintenance
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(18, 584)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(135, 20)
+        Me.Label7.Size = New System.Drawing.Size(109, 17)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "ACCESS LEVEL"
         '
@@ -152,7 +165,7 @@ Partial Class UserMaintenance
         Me.TextBox6.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox6.Location = New System.Drawing.Point(22, 530)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(310, 30)
+        Me.TextBox6.Size = New System.Drawing.Size(310, 25)
         Me.TextBox6.TabIndex = 12
         '
         'Label6
@@ -162,7 +175,7 @@ Partial Class UserMaintenance
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(18, 507)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(123, 20)
+        Me.Label6.Size = New System.Drawing.Size(102, 17)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "DESIGNATION"
         '
@@ -173,7 +186,7 @@ Partial Class UserMaintenance
         Me.TextBox5.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.Location = New System.Drawing.Point(22, 456)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(310, 30)
+        Me.TextBox5.Size = New System.Drawing.Size(310, 25)
         Me.TextBox5.TabIndex = 10
         '
         'Label5
@@ -183,7 +196,7 @@ Partial Class UserMaintenance
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(18, 433)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(134, 20)
+        Me.Label5.Size = New System.Drawing.Size(108, 17)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "MIDDLE INITIAL"
         '
@@ -194,7 +207,7 @@ Partial Class UserMaintenance
         Me.TextBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.Location = New System.Drawing.Point(22, 381)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(310, 30)
+        Me.TextBox4.Size = New System.Drawing.Size(310, 25)
         Me.TextBox4.TabIndex = 8
         '
         'Label4
@@ -204,7 +217,7 @@ Partial Class UserMaintenance
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(18, 358)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(109, 20)
+        Me.Label4.Size = New System.Drawing.Size(90, 17)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "FIRST NAME"
         '
@@ -215,7 +228,7 @@ Partial Class UserMaintenance
         Me.TextBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.Location = New System.Drawing.Point(23, 315)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(310, 30)
+        Me.TextBox3.Size = New System.Drawing.Size(310, 25)
         Me.TextBox3.TabIndex = 6
         '
         'Label3
@@ -225,7 +238,7 @@ Partial Class UserMaintenance
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(19, 292)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(104, 20)
+        Me.Label3.Size = New System.Drawing.Size(86, 17)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "LAST NAME"
         '
@@ -236,7 +249,7 @@ Partial Class UserMaintenance
         Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.Location = New System.Drawing.Point(22, 241)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(310, 30)
+        Me.TextBox2.Size = New System.Drawing.Size(310, 25)
         Me.TextBox2.TabIndex = 4
         '
         'Label2
@@ -246,7 +259,7 @@ Partial Class UserMaintenance
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(18, 218)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(107, 20)
+        Me.Label2.Size = New System.Drawing.Size(88, 17)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "PASSWORD"
         '
@@ -257,7 +270,7 @@ Partial Class UserMaintenance
         Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(23, 176)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(310, 30)
+        Me.TextBox1.Size = New System.Drawing.Size(310, 25)
         Me.TextBox1.TabIndex = 2
         '
         'Label1
@@ -267,7 +280,7 @@ Partial Class UserMaintenance
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(19, 153)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 20)
+        Me.Label1.Size = New System.Drawing.Size(85, 17)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "USERNAME"
         '
@@ -312,7 +325,7 @@ Partial Class UserMaintenance
         Me.TextBox7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox7.Location = New System.Drawing.Point(123, 12)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(435, 34)
+        Me.TextBox7.Size = New System.Drawing.Size(435, 29)
         Me.TextBox7.TabIndex = 1
         '
         'Label8
@@ -324,7 +337,7 @@ Partial Class UserMaintenance
         Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label8.Location = New System.Drawing.Point(9, 14)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(114, 28)
+        Me.Label8.Size = New System.Drawing.Size(92, 21)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "FIND USER"
         '
@@ -351,22 +364,9 @@ Partial Class UserMaintenance
         Me.DataGridView1.Size = New System.Drawing.Size(832, 692)
         Me.DataGridView1.TabIndex = 0
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.remove_button
-        Me.PictureBox3.Location = New System.Drawing.Point(1148, 11)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(25, 25)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 1
-        Me.PictureBox3.TabStop = False
-        '
         'UserMaintenance
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1188, 793)
         Me.Controls.Add(Me.Panel4)
@@ -378,6 +378,7 @@ Partial Class UserMaintenance
         Me.Name = "UserMaintenance"
         Me.Text = "UserMaintenance"
         Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -386,7 +387,6 @@ Partial Class UserMaintenance
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
