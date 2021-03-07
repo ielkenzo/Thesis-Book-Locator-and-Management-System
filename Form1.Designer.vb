@@ -24,10 +24,21 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.btnSearchBook = New System.Windows.Forms.Button()
+        Me.btnBookLocation = New System.Windows.Forms.Button()
+        Me.btnSystemUser = New System.Windows.Forms.Button()
+        Me.btnBookMaintenance = New System.Windows.Forms.Button()
+        Me.btnStudent = New System.Windows.Forms.Button()
+        Me.btnDashboard = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.lbl_timer = New System.Windows.Forms.Label()
@@ -48,21 +59,12 @@ Partial Class Form1
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.btnSearchBook = New System.Windows.Forms.Button()
-        Me.btnBookLocation = New System.Windows.Forms.Button()
-        Me.btnSystemUser = New System.Windows.Forms.Button()
-        Me.btnBookMaintenance = New System.Windows.Forms.Button()
-        Me.btnStudent = New System.Windows.Forms.Button()
-        Me.btnDashboard = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -73,8 +75,6 @@ Partial Class Form1
         Me.Panel10.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel9.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -97,6 +97,182 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(284, 750)
         Me.Panel1.TabIndex = 0
         '
+        'Button1
+        '
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.settings1
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(0, 561)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Button1.Size = New System.Drawing.Size(284, 50)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Settings"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button7.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.Button7.FlatAppearance.BorderSize = 0
+        Me.Button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button7.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.rfid
+        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button7.Location = New System.Drawing.Point(0, 511)
+        Me.Button7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.Button7.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Button7.Size = New System.Drawing.Size(284, 50)
+        Me.Button7.TabIndex = 8
+        Me.Button7.Text = "RFID Tag Records"
+        Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'btnSearchBook
+        '
+        Me.btnSearchBook.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSearchBook.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnSearchBook.FlatAppearance.BorderSize = 0
+        Me.btnSearchBook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSearchBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchBook.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSearchBook.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.books
+        Me.btnSearchBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSearchBook.Location = New System.Drawing.Point(0, 461)
+        Me.btnSearchBook.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSearchBook.Name = "btnSearchBook"
+        Me.btnSearchBook.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnSearchBook.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnSearchBook.Size = New System.Drawing.Size(284, 50)
+        Me.btnSearchBook.TabIndex = 7
+        Me.btnSearchBook.Text = "Search Book"
+        Me.btnSearchBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchBook.UseVisualStyleBackColor = True
+        '
+        'btnBookLocation
+        '
+        Me.btnBookLocation.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBookLocation.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBookLocation.FlatAppearance.BorderSize = 0
+        Me.btnBookLocation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBookLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBookLocation.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBookLocation.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBookLocation.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.book__1_1
+        Me.btnBookLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBookLocation.Location = New System.Drawing.Point(0, 411)
+        Me.btnBookLocation.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBookLocation.Name = "btnBookLocation"
+        Me.btnBookLocation.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnBookLocation.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnBookLocation.Size = New System.Drawing.Size(284, 50)
+        Me.btnBookLocation.TabIndex = 6
+        Me.btnBookLocation.Text = "Book Location"
+        Me.btnBookLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBookLocation.UseVisualStyleBackColor = True
+        '
+        'btnSystemUser
+        '
+        Me.btnSystemUser.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSystemUser.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnSystemUser.FlatAppearance.BorderSize = 0
+        Me.btnSystemUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSystemUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSystemUser.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSystemUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSystemUser.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.programmer
+        Me.btnSystemUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSystemUser.Location = New System.Drawing.Point(0, 361)
+        Me.btnSystemUser.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSystemUser.Name = "btnSystemUser"
+        Me.btnSystemUser.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnSystemUser.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnSystemUser.Size = New System.Drawing.Size(284, 50)
+        Me.btnSystemUser.TabIndex = 5
+        Me.btnSystemUser.Text = "System Users"
+        Me.btnSystemUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSystemUser.UseVisualStyleBackColor = True
+        '
+        'btnBookMaintenance
+        '
+        Me.btnBookMaintenance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBookMaintenance.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBookMaintenance.FlatAppearance.BorderSize = 0
+        Me.btnBookMaintenance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBookMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBookMaintenance.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBookMaintenance.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBookMaintenance.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.book1
+        Me.btnBookMaintenance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBookMaintenance.Location = New System.Drawing.Point(0, 311)
+        Me.btnBookMaintenance.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBookMaintenance.Name = "btnBookMaintenance"
+        Me.btnBookMaintenance.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnBookMaintenance.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnBookMaintenance.Size = New System.Drawing.Size(284, 50)
+        Me.btnBookMaintenance.TabIndex = 4
+        Me.btnBookMaintenance.Text = "Book Maintenance"
+        Me.btnBookMaintenance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBookMaintenance.UseVisualStyleBackColor = True
+        '
+        'btnStudent
+        '
+        Me.btnStudent.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnStudent.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnStudent.FlatAppearance.BorderSize = 0
+        Me.btnStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnStudent.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStudent.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnStudent.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.elearning
+        Me.btnStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnStudent.Location = New System.Drawing.Point(0, 261)
+        Me.btnStudent.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnStudent.Name = "btnStudent"
+        Me.btnStudent.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnStudent.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnStudent.Size = New System.Drawing.Size(284, 50)
+        Me.btnStudent.TabIndex = 3
+        Me.btnStudent.Text = "Student Records"
+        Me.btnStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnStudent.UseVisualStyleBackColor = True
+        '
+        'btnDashboard
+        '
+        Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDashboard.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnDashboard.FlatAppearance.BorderSize = 0
+        Me.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDashboard.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnDashboard.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.home
+        Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDashboard.Location = New System.Drawing.Point(0, 211)
+        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnDashboard.Name = "btnDashboard"
+        Me.btnDashboard.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnDashboard.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnDashboard.Size = New System.Drawing.Size(284, 50)
+        Me.btnDashboard.TabIndex = 2
+        Me.btnDashboard.Text = "Dashboard"
+        Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDashboard.UseVisualStyleBackColor = True
+        '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.PictureBox2)
@@ -106,6 +282,20 @@ Partial Class Form1
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(284, 158)
         Me.Panel3.TabIndex = 1
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.finder
+        Me.PictureBox2.Location = New System.Drawing.Point(72, 21)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(129, 119)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
         '
         'Panel2
         '
@@ -117,6 +307,27 @@ Partial Class Form1
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(284, 53)
         Me.Panel2.TabIndex = 0
+        '
+        'Button2
+        '
+        Me.Button2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.logout
+        Me.Button2.Location = New System.Drawing.Point(0, 0)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.Button2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Button2.Size = New System.Drawing.Size(284, 53)
+        Me.Button2.TabIndex = 10
+        Me.Button2.Text = "LOGOUT"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Panel4
         '
@@ -142,6 +353,19 @@ Partial Class Form1
         Me.Label9.TabIndex = 1
         Me.Label9.Text = "THESIS LOCATOR AND POSITION IDENTIFIER"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.remove_button
+        Me.PictureBox1.Location = New System.Drawing.Point(1226, 12)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.Panel14)
@@ -161,7 +385,7 @@ Partial Class Form1
         Me.Panel14.Controls.Add(Me.lbl_timer)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(1272, 158)
         Me.Panel14.TabIndex = 4
@@ -184,7 +408,7 @@ Partial Class Form1
         Me.Panel12.Controls.Add(Me.lbl_borrower)
         Me.Panel12.Controls.Add(Me.Panel13)
         Me.Panel12.Location = New System.Drawing.Point(968, 158)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(287, 251)
         Me.Panel12.TabIndex = 3
@@ -207,7 +431,7 @@ Partial Class Form1
         Me.Panel13.Controls.Add(Me.Label8)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel13.Location = New System.Drawing.Point(0, 0)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(287, 50)
         Me.Panel13.TabIndex = 1
@@ -230,7 +454,7 @@ Partial Class Form1
         Me.Panel8.Controls.Add(Me.lbl_checkedIn)
         Me.Panel8.Controls.Add(Me.Panel11)
         Me.Panel8.Location = New System.Drawing.Point(655, 158)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(287, 251)
         Me.Panel8.TabIndex = 1
@@ -253,7 +477,7 @@ Partial Class Form1
         Me.Panel11.Controls.Add(Me.Label3)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(287, 50)
         Me.Panel11.TabIndex = 1
@@ -276,7 +500,7 @@ Partial Class Form1
         Me.Panel7.Controls.Add(Me.lbl_checkOut)
         Me.Panel7.Controls.Add(Me.Panel10)
         Me.Panel7.Location = New System.Drawing.Point(348, 158)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(287, 251)
         Me.Panel7.TabIndex = 1
@@ -299,7 +523,7 @@ Partial Class Form1
         Me.Panel10.Controls.Add(Me.Label2)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(287, 50)
         Me.Panel10.TabIndex = 1
@@ -322,7 +546,7 @@ Partial Class Form1
         Me.Panel6.Controls.Add(Me.lbl_totalbook)
         Me.Panel6.Controls.Add(Me.Panel9)
         Me.Panel6.Location = New System.Drawing.Point(41, 158)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(287, 251)
         Me.Panel6.TabIndex = 0
@@ -345,7 +569,7 @@ Partial Class Form1
         Me.Panel9.Controls.Add(Me.Label1)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(287, 50)
         Me.Panel9.TabIndex = 0
@@ -366,222 +590,6 @@ Partial Class Form1
         '
         Me.Timer1.Interval = 1000
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.remove_button
-        Me.PictureBox1.Location = New System.Drawing.Point(1226, 12)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(25, 25)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.settings1
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(0, 561)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Button1.Size = New System.Drawing.Size(284, 50)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "SETTING" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button7.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button7.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.rfid
-        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(0, 511)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.Button7.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Button7.Size = New System.Drawing.Size(284, 50)
-        Me.Button7.TabIndex = 8
-        Me.Button7.Text = "RFID TAG RECORD"
-        Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'btnSearchBook
-        '
-        Me.btnSearchBook.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSearchBook.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnSearchBook.FlatAppearance.BorderSize = 0
-        Me.btnSearchBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchBook.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSearchBook.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.books
-        Me.btnSearchBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSearchBook.Location = New System.Drawing.Point(0, 461)
-        Me.btnSearchBook.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnSearchBook.Name = "btnSearchBook"
-        Me.btnSearchBook.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnSearchBook.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnSearchBook.Size = New System.Drawing.Size(284, 50)
-        Me.btnSearchBook.TabIndex = 7
-        Me.btnSearchBook.Text = "SEARCH BOOK" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.btnSearchBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchBook.UseVisualStyleBackColor = True
-        '
-        'btnBookLocation
-        '
-        Me.btnBookLocation.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBookLocation.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnBookLocation.FlatAppearance.BorderSize = 0
-        Me.btnBookLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBookLocation.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBookLocation.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBookLocation.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.book__1_1
-        Me.btnBookLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBookLocation.Location = New System.Drawing.Point(0, 411)
-        Me.btnBookLocation.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnBookLocation.Name = "btnBookLocation"
-        Me.btnBookLocation.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnBookLocation.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnBookLocation.Size = New System.Drawing.Size(284, 50)
-        Me.btnBookLocation.TabIndex = 6
-        Me.btnBookLocation.Text = "BOOKS LOCATION"
-        Me.btnBookLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBookLocation.UseVisualStyleBackColor = True
-        '
-        'btnSystemUser
-        '
-        Me.btnSystemUser.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSystemUser.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnSystemUser.FlatAppearance.BorderSize = 0
-        Me.btnSystemUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSystemUser.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSystemUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSystemUser.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.programmer
-        Me.btnSystemUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSystemUser.Location = New System.Drawing.Point(0, 361)
-        Me.btnSystemUser.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnSystemUser.Name = "btnSystemUser"
-        Me.btnSystemUser.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnSystemUser.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnSystemUser.Size = New System.Drawing.Size(284, 50)
-        Me.btnSystemUser.TabIndex = 5
-        Me.btnSystemUser.Text = "SYSTEM USERS"
-        Me.btnSystemUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSystemUser.UseVisualStyleBackColor = True
-        '
-        'btnBookMaintenance
-        '
-        Me.btnBookMaintenance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBookMaintenance.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnBookMaintenance.FlatAppearance.BorderSize = 0
-        Me.btnBookMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBookMaintenance.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBookMaintenance.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBookMaintenance.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.book1
-        Me.btnBookMaintenance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBookMaintenance.Location = New System.Drawing.Point(0, 311)
-        Me.btnBookMaintenance.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnBookMaintenance.Name = "btnBookMaintenance"
-        Me.btnBookMaintenance.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnBookMaintenance.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnBookMaintenance.Size = New System.Drawing.Size(284, 50)
-        Me.btnBookMaintenance.TabIndex = 4
-        Me.btnBookMaintenance.Text = "BOOK MAINTENANCE"
-        Me.btnBookMaintenance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBookMaintenance.UseVisualStyleBackColor = True
-        '
-        'btnStudent
-        '
-        Me.btnStudent.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnStudent.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnStudent.FlatAppearance.BorderSize = 0
-        Me.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnStudent.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStudent.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnStudent.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.elearning
-        Me.btnStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnStudent.Location = New System.Drawing.Point(0, 261)
-        Me.btnStudent.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnStudent.Name = "btnStudent"
-        Me.btnStudent.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnStudent.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnStudent.Size = New System.Drawing.Size(284, 50)
-        Me.btnStudent.TabIndex = 3
-        Me.btnStudent.Text = "STUDENT RECORDS"
-        Me.btnStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnStudent.UseVisualStyleBackColor = True
-        '
-        'btnDashboard
-        '
-        Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDashboard.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnDashboard.FlatAppearance.BorderSize = 0
-        Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDashboard.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnDashboard.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.home
-        Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDashboard.Location = New System.Drawing.Point(0, 211)
-        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnDashboard.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnDashboard.Size = New System.Drawing.Size(284, 50)
-        Me.btnDashboard.TabIndex = 2
-        Me.btnDashboard.Text = "DASHBOARD"
-        Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnDashboard.UseVisualStyleBackColor = True
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.finder
-        Me.PictureBox2.Location = New System.Drawing.Point(72, 21)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(129, 119)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.logout
-        Me.Button2.Location = New System.Drawing.Point(0, 0)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.Button2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Button2.Size = New System.Drawing.Size(284, 53)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "LOGOUT"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -600,9 +608,11 @@ Partial Class Form1
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
@@ -622,8 +632,6 @@ Partial Class Form1
         Me.Panel6.PerformLayout()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

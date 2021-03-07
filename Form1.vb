@@ -95,10 +95,13 @@ Public Class Form1
     End Sub
 
     Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
+        'Dim BookSearch As New Form
         BookSearch.StartPosition = FormStartPosition.CenterParent
         BookSearch.WindowState = FormWindowState.Maximized
-        BookSearch.ShowDialog()
+        BookSearch.Show()
     End Sub
+
+
 
     'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
     '    

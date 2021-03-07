@@ -24,7 +24,6 @@ Partial Class BookInfoForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -35,27 +34,19 @@ Partial Class BookInfoForm
         Me.ToolStripStatusLabelCount = New System.Windows.Forms.ToolStripStatusLabel()
         Me.DGVBookInfo = New System.Windows.Forms.DataGridView()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.DeleteBookToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditBookInformationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.BtnSearch = New System.Windows.Forms.Button()
         Me.tbSearch = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.CBYear = New System.Windows.Forms.ComboBox()
         Me.CBMonth = New System.Windows.Forms.ComboBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.btnAdd = New System.Windows.Forms.ToolStripButton()
-        Me.btnEdit = New System.Windows.Forms.ToolStripButton()
-        Me.btnDelete = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.LBoxPanel = New System.Windows.Forms.ListBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.tbPanel = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.BtnCancel = New System.Windows.Forms.Button()
-        Me.BtnAddSave = New System.Windows.Forms.Button()
         Me.LBoxResearcher = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbResearcher = New System.Windows.Forms.TextBox()
@@ -71,8 +62,16 @@ Partial Class BookInfoForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.DeleteBookToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditBookInformationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BtnSearch = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.ToolStripButton()
+        Me.btnEdit = New System.Windows.Forms.ToolStripButton()
+        Me.btnDelete = New System.Windows.Forms.ToolStripButton()
+        Me.BtnCancel = New System.Windows.Forms.Button()
+        Me.BtnAddSave = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -84,6 +83,7 @@ Partial Class BookInfoForm
         Me.Panel3.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -96,19 +96,6 @@ Partial Class BookInfoForm
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1232, 43)
         Me.Panel2.TabIndex = 1
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.remove_button
-        Me.PictureBox1.Location = New System.Drawing.Point(1193, 8)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(25, 25)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -212,20 +199,6 @@ Partial Class BookInfoForm
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(229, 82)
         '
-        'DeleteBookToolStripMenuItem
-        '
-        Me.DeleteBookToolStripMenuItem.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.delete
-        Me.DeleteBookToolStripMenuItem.Name = "DeleteBookToolStripMenuItem"
-        Me.DeleteBookToolStripMenuItem.Size = New System.Drawing.Size(228, 26)
-        Me.DeleteBookToolStripMenuItem.Text = "Delete Book"
-        '
-        'EditBookInformationToolStripMenuItem
-        '
-        Me.EditBookInformationToolStripMenuItem.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.edit
-        Me.EditBookInformationToolStripMenuItem.Name = "EditBookInformationToolStripMenuItem"
-        Me.EditBookInformationToolStripMenuItem.Size = New System.Drawing.Size(228, 26)
-        Me.EditBookInformationToolStripMenuItem.Text = "Edit Book Information"
-        '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
@@ -243,19 +216,6 @@ Partial Class BookInfoForm
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(882, 58)
         Me.Panel5.TabIndex = 2
-        '
-        'BtnSearch
-        '
-        Me.BtnSearch.BackColor = System.Drawing.Color.Transparent
-        Me.BtnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.BtnSearch.FlatAppearance.BorderSize = 0
-        Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSearch.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.search
-        Me.BtnSearch.Location = New System.Drawing.Point(632, 12)
-        Me.BtnSearch.Name = "BtnSearch"
-        Me.BtnSearch.Size = New System.Drawing.Size(49, 30)
-        Me.BtnSearch.TabIndex = 3
-        Me.BtnSearch.UseVisualStyleBackColor = False
         '
         'tbSearch
         '
@@ -332,38 +292,14 @@ Partial Class BookInfoForm
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnAdd, Me.btnEdit, Me.btnDelete, Me.ToolStripSeparator1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(350, 27)
+        Me.ToolStrip1.Size = New System.Drawing.Size(350, 31)
         Me.ToolStrip1.TabIndex = 20
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.plus
-        Me.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(63, 24)
-        Me.btnAdd.Text = "New"
-        '
-        'btnEdit
-        '
-        Me.btnEdit.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.edit
-        Me.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(59, 24)
-        Me.btnEdit.Text = "Edit"
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.delete
-        Me.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(77, 24)
-        Me.btnDelete.Text = "Delete"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 27)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 31)
         '
         'LBoxPanel
         '
@@ -402,36 +338,6 @@ Partial Class BookInfoForm
         Me.Label9.Size = New System.Drawing.Size(60, 23)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "PANEL"
-        '
-        'BtnCancel
-        '
-        Me.BtnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCancel.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnCancel.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.cancel
-        Me.BtnCancel.Location = New System.Drawing.Point(178, 684)
-        Me.BtnCancel.Name = "BtnCancel"
-        Me.BtnCancel.Size = New System.Drawing.Size(156, 46)
-        Me.BtnCancel.TabIndex = 15
-        Me.BtnCancel.Text = " CANCEL"
-        Me.BtnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnCancel.UseVisualStyleBackColor = False
-        '
-        'BtnAddSave
-        '
-        Me.BtnAddSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(227, Byte), Integer))
-        Me.BtnAddSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAddSave.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAddSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnAddSave.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.save_file_option
-        Me.BtnAddSave.Location = New System.Drawing.Point(16, 684)
-        Me.BtnAddSave.Name = "BtnAddSave"
-        Me.BtnAddSave.Size = New System.Drawing.Size(156, 46)
-        Me.BtnAddSave.TabIndex = 14
-        Me.BtnAddSave.Text = "  SAVE"
-        Me.BtnAddSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnAddSave.UseVisualStyleBackColor = False
         '
         'LBoxResearcher
         '
@@ -562,6 +468,100 @@ Partial Class BookInfoForm
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'DeleteBookToolStripMenuItem
+        '
+        Me.DeleteBookToolStripMenuItem.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.delete
+        Me.DeleteBookToolStripMenuItem.Name = "DeleteBookToolStripMenuItem"
+        Me.DeleteBookToolStripMenuItem.Size = New System.Drawing.Size(228, 26)
+        Me.DeleteBookToolStripMenuItem.Text = "Delete Book"
+        '
+        'EditBookInformationToolStripMenuItem
+        '
+        Me.EditBookInformationToolStripMenuItem.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.edit
+        Me.EditBookInformationToolStripMenuItem.Name = "EditBookInformationToolStripMenuItem"
+        Me.EditBookInformationToolStripMenuItem.Size = New System.Drawing.Size(228, 26)
+        Me.EditBookInformationToolStripMenuItem.Text = "Edit Book Information"
+        '
+        'BtnSearch
+        '
+        Me.BtnSearch.BackColor = System.Drawing.Color.Transparent
+        Me.BtnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.BtnSearch.FlatAppearance.BorderSize = 0
+        Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSearch.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.search
+        Me.BtnSearch.Location = New System.Drawing.Point(632, 12)
+        Me.BtnSearch.Name = "BtnSearch"
+        Me.BtnSearch.Size = New System.Drawing.Size(49, 30)
+        Me.BtnSearch.TabIndex = 3
+        Me.BtnSearch.UseVisualStyleBackColor = False
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.plus
+        Me.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(63, 28)
+        Me.btnAdd.Text = "New"
+        '
+        'btnEdit
+        '
+        Me.btnEdit.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.edit
+        Me.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(59, 28)
+        Me.btnEdit.Text = "Edit"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.delete
+        Me.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(77, 28)
+        Me.btnDelete.Text = "Delete"
+        '
+        'BtnCancel
+        '
+        Me.BtnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCancel.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnCancel.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.cancel
+        Me.BtnCancel.Location = New System.Drawing.Point(178, 684)
+        Me.BtnCancel.Name = "BtnCancel"
+        Me.BtnCancel.Size = New System.Drawing.Size(156, 46)
+        Me.BtnCancel.TabIndex = 15
+        Me.BtnCancel.Text = " CANCEL"
+        Me.BtnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnCancel.UseVisualStyleBackColor = False
+        '
+        'BtnAddSave
+        '
+        Me.BtnAddSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(227, Byte), Integer))
+        Me.BtnAddSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAddSave.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAddSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnAddSave.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.save_file_option
+        Me.BtnAddSave.Location = New System.Drawing.Point(16, 684)
+        Me.BtnAddSave.Name = "BtnAddSave"
+        Me.BtnAddSave.Size = New System.Drawing.Size(156, 46)
+        Me.BtnAddSave.TabIndex = 14
+        Me.BtnAddSave.Text = " SAVE"
+        Me.BtnAddSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnAddSave.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.remove_button
+        Me.PictureBox1.Location = New System.Drawing.Point(1193, 8)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
         'BookInfoForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -577,7 +577,6 @@ Partial Class BookInfoForm
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
@@ -594,6 +593,7 @@ Partial Class BookInfoForm
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

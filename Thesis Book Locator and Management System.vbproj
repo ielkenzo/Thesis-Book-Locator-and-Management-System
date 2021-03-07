@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{53CB2EB5-C83C-4137-9FA5-DE56031722AB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Thesis_Book_Locator_and_Management_System.UserLogin</StartupObject>
+    <StartupObject>Thesis_Book_Locator_and_Management_System.UserMaintenance</StartupObject>
     <RootNamespace>Thesis_Book_Locator_and_Management_System</RootNamespace>
     <AssemblyName>Thesis Book Locator and Management System</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -165,6 +165,24 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
+    <Compile Include="PanelModule.Designer.vb">
+      <DependentUpon>PanelModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelModule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Progress.Designer.vb">
+      <DependentUpon>Progress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Progress.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResearcherModule.Designer.vb">
+      <DependentUpon>ResearcherModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResearcherModule.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TransactionForm.Designer.vb">
       <DependentUpon>TransactionForm.vb</DependentUpon>
     </Compile>
@@ -205,6 +223,12 @@
     <Compile Include="UserMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UsersModule.Designer.vb">
+      <DependentUpon>UsersModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UsersModule.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BookDetails.resx">
@@ -225,6 +249,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PanelModule.resx">
+      <DependentUpon>PanelModule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Progress.resx">
+      <DependentUpon>Progress.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResearcherModule.resx">
+      <DependentUpon>ResearcherModule.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransactionForm.resx">
       <DependentUpon>TransactionForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserMaintenance.resx">
       <DependentUpon>UserMaintenance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersModule.resx">
+      <DependentUpon>UsersModule.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

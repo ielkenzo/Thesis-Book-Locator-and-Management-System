@@ -104,54 +104,92 @@ Public Class BookInfoForm
     End Sub
 
     Private Sub BtnAddSave_Click(sender As Object, e As EventArgs) Handles BtnAddSave.Click
-        If IsEmpty() = False Then
-            MsgBox("Fill in all field. If not applicable, type in dash (-)", MsgBoxStyle.Exclamation)
-            'MsgBox("Fill in neccessary fields!", MsgBoxStyle.Exclamation, "Error Message")
-        Else
-            objAssign()
-            Dim cmd As New MySqlCommand("", dbconn)
-            cmd.CommandText = "INSERT INTO book_tbl VALUES(@bookid,@title,@monthyr,@adviser,@critic)"
-            cmd.Parameters.AddWithValue("@bookid", bookid)
-            cmd.Parameters.AddWithValue("@title", title)
-            cmd.Parameters.AddWithValue("@monthyr", monthyr)
-            cmd.Parameters.AddWithValue("@adviser", adviser)
-            cmd.Parameters.AddWithValue("@critic", critic)
-            If MsgBox("Are you sure you want to save?", vbYesNo) = vbYes Then
-                dbconn.Open()
-                cmd.ExecuteNonQuery()
-                dbconn.Close()
-                Dim author As String = ""
-                'add Name from lbox to dbase
-                For i As Integer = 0 To LBoxResearcher.Items.Count - 1
-                    author = LBoxResearcher.Items(i).ToString
-                    insertAuthor(Me.tbBookID.Text, author)
-                Next
+        If BtnAddSave.Text = " SAVE" Then
+            If IsEmpty() = False Then
+                MsgBox("Fill in all field. If not applicable, type in dash (-)", MsgBoxStyle.Exclamation)
+                'MsgBox("Fill in neccessary fields!", MsgBoxStyle.Exclamation, "Error Message")
+            Else
+                objAssign()
+                Dim cmd As New MySqlCommand("", dbconn)
+                cmd.CommandText = "INSERT INTO book_tbl VALUES(@bookid,@title,@monthyr,@adviser,@critic)"
+                cmd.Parameters.AddWithValue("@bookid", bookid)
+                cmd.Parameters.AddWithValue("@title", title)
+                cmd.Parameters.AddWithValue("@monthyr", monthyr)
+                cmd.Parameters.AddWithValue("@adviser", adviser)
+                cmd.Parameters.AddWithValue("@critic", critic)
+                If MsgBox("Are you sure you want to save?", vbYesNo) = vbYes Then
+                    dbconn.Open()
+                    cmd.ExecuteNonQuery()
+                    dbconn.Close()
+                    Dim author As String = ""
+                    'add Name from lbox to dbase
+                    For i As Integer = 0 To LBoxResearcher.Items.Count - 1
+                        author = LBoxResearcher.Items(i).ToString
+                        insertAuthor(Me.tbBookID.Text, author)
+                    Next
 
-                For x As Integer = 0 To LBoxPanel.Items.Count - 1
-                    insertPanel(Me.tbBookID.Text, LBoxPanel.Items(x).ToString)
-                Next
-                MsgBox("The data has been successfully added", MsgBoxStyle.Information)
+                    For x As Integer = 0 To LBoxPanel.Items.Count - 1
+                        insertPanel(Me.tbBookID.Text, LBoxPanel.Items(x).ToString)
+                    Next
+                    MsgBox("The data has been successfully added", MsgBoxStyle.Information)
 
-                unlockControls(False)
-                BtnCancel.Enabled = False
-                BtnAddSave.Enabled = False
-                'dito ako nag insert ng code
+                    unlockControls(False)
+                    BtnCancel.Enabled = False
+                    BtnAddSave.Enabled = False
+                    'dito ako nag insert ng code
 
-                BookLocationForm.tbBookID.Text = Me.tbBookID.Text
-                BookLocationForm.ShowDialog()
-                'ending
-                loadBooks("")
-                ClearFields("")
-                Me.ToolStripStatusLabelCount.Text = Me.DGVBookInfo.Rows.Count
+                    BookLocationForm.tbBookID.Text = Me.tbBookID.Text
+                    BookLocationForm.ShowDialog()
+                    'ending
+                    loadBooks("")
+                    ClearFields("")
+                    Form1.loadTotalBooks()
+                    Me.ToolStripStatusLabelCount.Text = Me.DGVBookInfo.Rows.Count
+                End If
+
             End If
+        ElseIf BtnAddSave.Text = " UPDATE" Then
+            updateBook()
+            BtnAddSave.Text = " SAVE"
+            unlockControls(False)
+            BtnCancel.Enabled = False
+            BtnAddSave.Enabled = False
         End If
 
     End Sub
 
+    Sub updateBook()
+        objAssign()
+        Dim sql As String = "UPDATE book_tbl SET Title=@title, MonthYearSubmitted=@mysub, Adviser=@adviser, CriticReader=@creader where BookID=@bid;"
+        Dim cmd As New MySqlCommand(sql, dbconn)
+        cmd.Parameters.AddWithValue("title", Me.tbThesisTitle.Text)
+        cmd.Parameters.AddWithValue("mysub", monthyr)
+        cmd.Parameters.AddWithValue("adviser", Me.tbAdviser.Text)
+        cmd.Parameters.AddWithValue("creader", Me.tbCritic.Text)
+        cmd.Parameters.AddWithValue("bid", Me.tbBookID.Text)
+        dbconn.Open()
+        cmd.ExecuteNonQuery()
+        dbconn.Close()
+        MsgBox("Update Executed!")
+        loadBooks("")
+        'Load()
+        'sql = ""
+    End Sub
+
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
-        BtnCancel.Enabled = False
-        BtnAddSave.Enabled = False
-        ClearFields("")
+        If BtnAddSave.Text = " UPDATE" Then
+            BtnCancel.Enabled = False
+            BtnAddSave.Enabled = False
+            BtnAddSave.Text = " SAVE"
+        Else
+            BtnCancel.Enabled = False
+            BtnAddSave.Enabled = False
+            BtnAddSave.Text = " SAVE"
+            ClearFields("")
+        End If
+
+
+
     End Sub
 
 
@@ -160,7 +198,13 @@ Public Class BookInfoForm
         If e.KeyCode = Keys.Enter Then
             Me.LBoxResearcher.Items.Add(Me.tbResearcher.Text.Trim())
             Me.tbResearcher.Text = ""
-        End If
+        ElseIf e.KeyCode = Keys.Enter And BtnAddSave.Text = " UPDATE" Then
+            objAssign()
+            insertAuthor(Me.tbBookID.Text, tbResearcher.Text)
+
+            Me.LBoxResearcher.Items.Add(Me.tbResearcher.Text.Trim())
+                Me.tbResearcher.Text = ""
+            End If
 
     End Sub
 
@@ -217,6 +261,7 @@ Public Class BookInfoForm
         Dim id As String = DGVBookInfo.Item(0, i).Value
         MsgBox(id)
         deleteBook(id)
+        Form1.loadTotalBooks()
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -224,10 +269,15 @@ Public Class BookInfoForm
         Dim id As String = DGVBookInfo.Item(0, i).Value
         MsgBox(id)
         deleteBook(id)
+        Form1.loadTotalBooks()
     End Sub
 
     Private Sub EditBookInformationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditBookInformationToolStripMenuItem.Click
-
+        unlockControls(True)
+        Me.tbBookID.Enabled = False
+        BtnCancel.Enabled = True
+        BtnAddSave.Enabled = True
+        BtnAddSave.Text = " UPDATE"
     End Sub
 
     Sub loadPanel(id As String)
@@ -280,17 +330,69 @@ Public Class BookInfoForm
         loadAuthor(id)
     End Sub
 
+    Private authorID As Integer
+    Function getAuthorID(name As String) As Integer
+        Dim authID As Integer
+        Dim sql As String = "Select AuthorID from author_tbl where FullName=@fullname"
+        Dim cmd As New MySqlCommand(sql, dbconn)
+        cmd.Parameters.AddWithValue("fullname", Me.tbResearcher.Text)
+        Dim dba As New MySqlDataAdapter(cmd)
+        Dim dbs As New DataSet
+        dbs.Reset()
+        dba.Fill(dbs)
+        If dbs.Tables(0).DefaultView.Count > 0 Then
+            authID = CInt(dbs.Tables(0).DefaultView.Item(0).Item(0).ToString)
+        End If
+        Return authID
+    End Function
+
     Private Sub LBoxResearcher_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles LBoxResearcher.MouseDoubleClick
         Me.tbResearcher.Text = Me.LBoxResearcher.SelectedItem.ToString
+        If BtnAddSave.Text = " UPDATE" Then
+            authorID = getAuthorID(tbResearcher.Text)
+            MsgBox(authorID)
+            ResearcherModule.authorID = authorID
+            ResearcherModule.tb_fullname.Text = Me.LBoxResearcher.SelectedItem.ToString
+            ResearcherModule.ShowDialog()
+        Else
+            Me.tbResearcher.Text = Me.LBoxResearcher.SelectedItem.ToString
+        End If
     End Sub
 
+    Private panelID As Integer
+    Function getPanelID(name As String) As Integer
+        Dim panID As Integer
+        Dim sql As String = "Select PanelNo from Panel_tbl where FullName=@fullname"
+        Dim cmd As New MySqlCommand(sql, dbconn)
+        cmd.Parameters.AddWithValue("fullname", Me.tbPanel.Text)
+        Dim dba As New MySqlDataAdapter(cmd)
+        Dim dbs As New DataSet
+        dbs.Reset()
+        dba.Fill(dbs)
+        If dbs.Tables(0).DefaultView.Count > 0 Then
+            panID = CInt(dbs.Tables(0).DefaultView.Item(0).Item("PanelNo").ToString)
+        End If
+        Return panID
+    End Function
     Private Sub LBoxPanel_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles LBoxPanel.MouseDoubleClick
         Me.tbPanel.Text = Me.LBoxPanel.SelectedItem.ToString
+        If BtnAddSave.Text = " UPDATE" Then
+            panelID = getPanelID(tbPanel.Text)
+            PanelModule.panelid = panelID
+            PanelModule.tb_fullname.Text = Me.LBoxPanel.SelectedItem.ToString
+            PanelModule.Show()
+        Else
+            Me.tbPanel.Text = Me.LBoxPanel.SelectedItem.ToString
+        End If
+
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         unlockControls(True)
         Me.tbBookID.Enabled = False
+        BtnCancel.Enabled = True
+        BtnAddSave.Enabled = True
+        BtnAddSave.Text = " UPDATE"
     End Sub
 
 
@@ -299,4 +401,6 @@ Public Class BookInfoForm
         BookLocationForm.tbBookID.Text = Me.tbBookID.Text
         BookLocationForm.ShowDialog()
     End Sub
+
+
 End Class

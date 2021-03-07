@@ -123,8 +123,10 @@ Public Class BookLocationForm
                 btnEdit.Enabled = True
                 btnDelete.Enabled = True
                 loadBookLocation("")
+                Form1.loadCheckedIn()
                 MsgBox("The Book Location of this book has been updated", MsgBoxStyle.Information, "Update Prompt")
                 btnSave.Text = "SAVE"
+
             End If
 
         End If
@@ -180,7 +182,6 @@ Public Class BookLocationForm
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Dim i As Integer = DGVBookLocation.CurrentRow.Index
         Dim id As String = DGVBookLocation.Item(0, i).Value
-
         Try
             If MsgBox("You are about to delete this record and once deleted it cannot no longer be retrieved?", MsgBoxStyle.YesNo) = vbYes Then
                 Dim cmd As New MySqlCommand("DELETE FROM booklocation_tbl where LocationID=" & id, dbconn)
@@ -189,8 +190,9 @@ Public Class BookLocationForm
                 dbconn.Close()
                 MsgBox("Book Location Deleted", MsgBoxStyle.Information)
                 loadBookLocation("")
-            End If
 
+            End If
+            Form1.loadCheckedIn()
         Catch ex As Exception
 
         End Try
@@ -232,8 +234,9 @@ Public Class BookLocationForm
                 dbconn.Close()
                 MsgBox("Book Location Deleted", MsgBoxStyle.Information)
                 loadBookLocation("")
-            End If
 
+            End If
+            Form1.loadCheckedIn()
         Catch ex As Exception
 
         End Try
