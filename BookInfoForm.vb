@@ -93,6 +93,7 @@ Public Class BookInfoForm
         Return c
     End Function
     Private Sub BookInfoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Size = Screen.GetWorkingArea(Me).Size
         For start As Integer = Integer.Parse(Date.Now.ToString("yyyy")) To 2000 Step -1
             Me.CBYear.Items.Add(start)
         Next
@@ -144,6 +145,7 @@ Public Class BookInfoForm
                     loadBooks("")
                     ClearFields("")
                     Form1.loadTotalBooks()
+                    DGVBookInfo.Enabled = True
                     Me.ToolStripStatusLabelCount.Text = Me.DGVBookInfo.Rows.Count
                 End If
 
@@ -154,6 +156,8 @@ Public Class BookInfoForm
             unlockControls(False)
             BtnCancel.Enabled = False
             BtnAddSave.Enabled = False
+            DGVBookInfo.Enabled = True
+            ClearFields("")
         End If
 
     End Sub
@@ -181,10 +185,12 @@ Public Class BookInfoForm
             BtnCancel.Enabled = False
             BtnAddSave.Enabled = False
             BtnAddSave.Text = " SAVE"
+            DGVBookInfo.Enabled = True
         Else
             BtnCancel.Enabled = False
             BtnAddSave.Enabled = False
             BtnAddSave.Text = " SAVE"
+            DGVBookInfo.Enabled = True
             ClearFields("")
         End If
 
@@ -196,23 +202,39 @@ Public Class BookInfoForm
 
     Private Sub tbResearcher_KeyDown(sender As Object, e As KeyEventArgs) Handles tbResearcher.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Me.LBoxResearcher.Items.Add(Me.tbResearcher.Text.Trim())
-            Me.tbResearcher.Text = ""
-        ElseIf e.KeyCode = Keys.Enter And BtnAddSave.Text = " UPDATE" Then
-            objAssign()
-            insertAuthor(Me.tbBookID.Text, tbResearcher.Text)
+            If BtnAddSave.Text = " SAVE" Then
+                Me.LBoxResearcher.Items.Add(Me.tbResearcher.Text.Trim())
+                Me.tbResearcher.Text = ""
 
-            Me.LBoxResearcher.Items.Add(Me.tbResearcher.Text.Trim())
+            ElseIf BtnAddSave.Text = " UPDATE" Then
+                objAssign()
+                insertAuthor(Me.tbBookID.Text, tbResearcher.Text)
+                Me.LBoxResearcher.Items.Add(Me.tbResearcher.Text.Trim())
                 Me.tbResearcher.Text = ""
             End If
+        End If
 
     End Sub
 
     Private Sub tbPanel_KeyDown(sender As Object, e As KeyEventArgs) Handles tbPanel.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            Me.LBoxPanel.Items.Add(Me.tbPanel.Text.Trim())
-            Me.tbPanel.Text = ""
-        End If
+        Try
+
+            If e.KeyCode = Keys.Enter Then
+                If BtnAddSave.Text = " SAVE" Then
+                    Me.LBoxPanel.Items.Add(Me.tbPanel.Text.Trim())
+                    Me.tbPanel.Text = ""
+                ElseIf BtnAddSave.Text = " UPDATE" Then
+                    'Dim full As String = LBoxPanel.Select 'edItem.ToString
+                    objAssign()
+                    insertPanel(Me.tbBookID.Text, tbPanel.Text)
+                    Me.LBoxPanel.Items.Add(Me.tbPanel.Text.Trim())
+                    Me.tbResearcher.Text = ""
+                End If
+            End If
+        Catch ex As Exception
+            Exit Try
+        End Try
+
 
     End Sub
 
@@ -225,6 +247,8 @@ Public Class BookInfoForm
         ClearFields("")
         BtnCancel.Enabled = True
         BtnAddSave.Enabled = True
+        DGVBookInfo.ReadOnly = True
+        DGVBookInfo.Enabled = False
     End Sub
 
     Public Sub deletePanel(id As String)
@@ -278,6 +302,7 @@ Public Class BookInfoForm
         BtnCancel.Enabled = True
         BtnAddSave.Enabled = True
         BtnAddSave.Text = " UPDATE"
+        DGVBookInfo.Enabled = False
     End Sub
 
     Sub loadPanel(id As String)
@@ -393,6 +418,7 @@ Public Class BookInfoForm
         BtnCancel.Enabled = True
         BtnAddSave.Enabled = True
         BtnAddSave.Text = " UPDATE"
+        DGVBookInfo.Enabled = False
     End Sub
 
 
@@ -400,6 +426,22 @@ Public Class BookInfoForm
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         BookLocationForm.tbBookID.Text = Me.tbBookID.Text
         BookLocationForm.ShowDialog()
+    End Sub
+
+    Private Sub DeleteAuthorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteAuthorToolStripMenuItem.Click
+        Dim fullname As String = LBoxResearcher.SelectedItem.ToString
+        If MsgBox("You are about to delete this author. Are you sure of this action?", MsgBoxStyle.YesNo, "Confirm Action") = vbYes Then
+            Dim cmd As New MySqlCommand("Delete from author_tbl where FullName='" & fullname & "'", dbconn)
+            dbconn.Open()
+            If cmd.ExecuteNonQuery > 0 Then
+                MsgBox("Author selected has been remove from this book title.", MsgBoxStyle.Information, "Deleted Message")
+                LBoxResearcher.Items.Remove(fullname)
+            Else
+                MsgBox("Warning: No Record Existed", MsgBoxStyle.Critical, "Warning Message")
+            End If
+            dbconn.Close()
+        End If
+
     End Sub
 
 

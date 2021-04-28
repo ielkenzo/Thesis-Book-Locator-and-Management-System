@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class BookSearch
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,11 @@ Partial Class BookSearch
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.tbSearchBook = New System.Windows.Forms.TextBox()
@@ -34,11 +32,12 @@ Partial Class BookSearch
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.flp = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.tp = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Splitter1 = New System.Windows.Forms.Splitter()
+        Me.flp = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -67,28 +66,6 @@ Partial Class BookSearch
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "SEARCH BOOK AND LOCATE WINDOW"
         '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 73)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1198, 52)
-        Me.Panel2.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(8, 10)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(151, 28)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Date and Time"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Timer1
         '
         Me.Timer1.Interval = 1000
@@ -96,10 +73,11 @@ Partial Class BookSearch
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Splitter1)
         Me.Panel3.Controls.Add(Me.tbSearchBook)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 125)
+        Me.Panel3.Location = New System.Drawing.Point(0, 73)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1198, 108)
         Me.Panel3.TabIndex = 2
@@ -120,17 +98,17 @@ Partial Class BookSearch
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label3.Location = New System.Drawing.Point(317, 11)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(467, 28)
+        Me.Label3.Size = New System.Drawing.Size(250, 28)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Search the Title, Researcher's Name or Keyword"
+        Me.Label3.Text = "Search the Title Keyword"
         '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.Panel6)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(0, 233)
+        Me.Panel4.Location = New System.Drawing.Point(0, 181)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1198, 572)
+        Me.Panel4.Size = New System.Drawing.Size(1198, 624)
         Me.Panel4.TabIndex = 3
         '
         'Panel6
@@ -140,7 +118,7 @@ Partial Class BookSearch
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1198, 572)
+        Me.Panel6.Size = New System.Drawing.Size(1198, 624)
         Me.Panel6.TabIndex = 1
         '
         'Panel9
@@ -150,18 +128,8 @@ Partial Class BookSearch
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel9.Location = New System.Drawing.Point(0, 61)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(1198, 511)
+        Me.Panel9.Size = New System.Drawing.Size(1198, 563)
         Me.Panel9.TabIndex = 2
-        '
-        'flp
-        '
-        Me.flp.AutoScroll = True
-        Me.flp.AutoSize = True
-        Me.flp.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.flp.Location = New System.Drawing.Point(0, 0)
-        Me.flp.Name = "flp"
-        Me.flp.Size = New System.Drawing.Size(1198, 511)
-        Me.flp.TabIndex = 0
         '
         'Panel8
         '
@@ -186,6 +154,24 @@ Partial Class BookSearch
         Me.Label5.Text = "BOOK LOCATION"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Splitter1
+        '
+        Me.Splitter1.Location = New System.Drawing.Point(0, 0)
+        Me.Splitter1.Name = "Splitter1"
+        Me.Splitter1.Size = New System.Drawing.Size(3, 108)
+        Me.Splitter1.TabIndex = 2
+        Me.Splitter1.TabStop = False
+        '
+        'flp
+        '
+        Me.flp.AutoScroll = True
+        Me.flp.AutoSize = True
+        Me.flp.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.flp.Location = New System.Drawing.Point(0, 0)
+        Me.flp.Name = "flp"
+        Me.flp.Size = New System.Drawing.Size(1198, 563)
+        Me.flp.TabIndex = 0
+        '
         'BookSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -193,15 +179,12 @@ Partial Class BookSearch
         Me.ClientSize = New System.Drawing.Size(1198, 805)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "BookSearch"
         Me.Text = "BookSearch"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
@@ -216,8 +199,6 @@ Partial Class BookSearch
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel3 As Panel
     Friend WithEvents tbSearchBook As TextBox
@@ -227,5 +208,7 @@ Partial Class BookSearch
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel9 As Panel
+    Friend WithEvents tp As ToolTip
+    Friend WithEvents Splitter1 As Splitter
     Friend WithEvents flp As FlowLayoutPanel
 End Class

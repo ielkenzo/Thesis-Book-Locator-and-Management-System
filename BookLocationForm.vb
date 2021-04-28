@@ -39,6 +39,7 @@ Public Class BookLocationForm
     End Sub
 
     Private Sub BookLocationForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.Size = Screen.GetWorkingArea(Me).Size
         loadBookLocation("")
         lockControls(False)
         loadShelfColumn()
@@ -75,7 +76,7 @@ Public Class BookLocationForm
 
 
     End Sub
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs)
         Dim bookid, shelfcode, shelfrow, shelfcol, status As String
         bookid = Me.tbBookID.Text
         shelfcode = cbShelfCode.Text
@@ -134,7 +135,7 @@ Public Class BookLocationForm
 
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
 
         lockControls(False)
         ClearFields("")
@@ -168,8 +169,8 @@ Public Class BookLocationForm
     End Function
     Private Sub tbBookID_KeyDown(sender As Object, e As KeyEventArgs) Handles tbBookID.KeyDown
         If e.KeyCode = Keys.Enter Then
-            If checkBookID(Me.tbBookID.Text) = True Then
-                MsgBox("The Book ID has been assigned already!", MsgBoxStyle.Exclamation)
+            If checkBookID(Me.tbBookID.Text) = False Then
+                MsgBox("The Book ID does not exist in the current record!", MsgBoxStyle.Exclamation)
                 Me.tbBookID.Text = ""
             End If
         End If
@@ -259,5 +260,100 @@ Public Class BookLocationForm
 
     End Sub
 
+    Function checkIDinLocation(bid As String) As Boolean
+        Dim isExist As Boolean = False
+        Dim sql As String = "SELECT BooKID from booklocation_tbl where BookID=@bid"
+        Dim cmd As New MySqlCommand(sql, dbconn)
+        cmd.Parameters.AddWithValue("bid", bid)
+        Dim dba As New MySqlDataAdapter(cmd)
+        Dim dbs As New DataSet
+        dbs.Reset()
+        dba.Fill(dbs)
+        If dbs.Tables(0).DefaultView.Count > 0 Then
+            isExist = True
+        Else
+            isExist = False
+        End If
 
+        Return isExist
+    End Function
+    Private Sub Gbtn_Save_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim bookid, shelfcode, shelfrow, shelfcol, status As String
+        bookid = Me.tbBookID.Text
+        shelfcode = cbShelfCode.Text
+        shelfrow = cbShelfRow.Text
+        shelfcol = Me.cbShelfCol.Text
+        status = cbStatus.Text
+
+        If tbBookID.Text = "" Or cbShelfCode.Text = "" Or cbShelfCol.Text = "" Or cbShelfRow.Text = "" Or cbStatus.Text = "" Then
+            MsgBox("Fill in the fields", MsgBoxStyle.Critical, "Required Fields")
+        Else
+
+
+
+            Dim cmd As New MySqlCommand("", dbconn)
+            If btnSave.Text = "SAVE" Then
+                If checkIDinLocation(bookid) = True Then
+                    MsgBox("The ID you are entering is already assigned to a book. Please choose another ID or check the unassigned ID", MsgBoxStyle.Critical)
+
+                Else
+                    cmd.CommandText = "INSERT INTO booklocation_tbl VALUES('',@bookid,@shelf,@row,@col,@status)"
+                    cmd.Parameters.AddWithValue("@bookid", bookid)
+                    cmd.Parameters.AddWithValue("@shelf", shelfcode)
+                    cmd.Parameters.AddWithValue("@row", shelfrow)
+                    cmd.Parameters.AddWithValue("@col", shelfcol)
+                    cmd.Parameters.AddWithValue("@status", status)
+                    dbconn.Open()
+                    cmd.ExecuteNonQuery()
+                    dbconn.Close()
+
+                    lockControls(False)
+                    ClearFields("")
+                    btnNew.Enabled = True
+                    btnEdit.Enabled = True
+                    btnDelete.Enabled = True
+                    loadBookLocation("")
+                    MsgBox("New Book Location Added Successfully", MsgBoxStyle.Information, "Insert Prompt")
+                End If
+            ElseIf btnSave.Text = "UPDATE" Then
+                If checkIDinLocation(bookid) = True Then
+                    MsgBox("The ID you are entering is already assigned to a book. Please choose another ID or check the unassigned ID", MsgBoxStyle.Critical)
+
+                Else
+                    cmd.CommandText = "UPDATE booklocation_tbl SET ShelfCode=@shelf, RowNo=@row,ColumnNo=@col,Status=@status WHERE BookID=@bookid"
+                    cmd.Parameters.AddWithValue("@bookid", bookid)
+                    cmd.Parameters.AddWithValue("@shelf", shelfcode)
+                    cmd.Parameters.AddWithValue("@row", shelfrow)
+                    cmd.Parameters.AddWithValue("@col", shelfcol)
+                    cmd.Parameters.AddWithValue("@status", status)
+                    dbconn.Open()
+                    cmd.ExecuteNonQuery()
+                    dbconn.Close()
+
+                    lockControls(False)
+                    ClearFields("")
+                    btnNew.Enabled = True
+                    btnEdit.Enabled = True
+                    btnDelete.Enabled = True
+                    loadBookLocation("")
+                    Form1.loadCheckedIn()
+                    MsgBox("The Book Location of this book has been updated", MsgBoxStyle.Information, "Update Prompt")
+                    btnSave.Text = "SAVE"
+                End If
+            End If
+
+        End If
+
+
+    End Sub
+
+    Private Sub Gbtn_Cancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+
+        lockControls(False)
+        ClearFields("")
+        btnNew.Enabled = True
+        btnEdit.Enabled = True
+        btnDelete.Enabled = True
+        btnSave.Text = "SAVE"
+    End Sub
 End Class

@@ -1,15 +1,8 @@
 ﻿Imports System.Data
 Imports MySql.Data.MySqlClient
 Public Class Form1
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        If MsgBox("Are your sure you want to Logout?", vbYesNo) = vbYes Then
-            Me.Close()
-            UserLogin.Close()
-        End If
-
-    End Sub
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Size = Screen.GetWorkingArea(Me).Size
         Timer1.Enabled = True
         loadTotalBooks()
         loadCheckedIn()
@@ -18,7 +11,7 @@ Public Class Form1
     End Sub
 
     Sub loadCheckedIn()
-        Dim dba As New MySqlDataAdapter("Select count(*) from booklocation_tbl where Status='Available'", dbconn)
+        Dim dba As New MySqlDataAdapter("Select count(*) from booklocation_tbl where Status='Available' or Status='AVAILABLE'", dbconn)
         Dim dbs As New DataSet
         dbs.Reset()
         dba.Fill(dbs)
@@ -67,26 +60,26 @@ Public Class Form1
     Private Sub btnStudent_Click(sender As Object, e As EventArgs) Handles btnStudent.Click
         Me.IsMdiContainer = True
         'Me.MdiParent.Enabled = True
-        StudentForm.StartPosition = FormStartPosition.CenterParent
-        StudentForm.WindowState = FormWindowState.Maximized
+        StudentForm.StartPosition = FormStartPosition.Manual
+        StudentForm.WindowState = FormWindowState.Normal
         StudentForm.ShowDialog()
     End Sub
 
     Private Sub btnBookMaintenance_Click(sender As Object, e As EventArgs) Handles btnBookMaintenance.Click
-        BookInfoForm.StartPosition = FormStartPosition.CenterParent
-        BookInfoForm.WindowState = FormWindowState.Maximized
+        BookInfoForm.StartPosition = FormStartPosition.Manual
+        BookInfoForm.WindowState = FormWindowState.Normal
         BookInfoForm.ShowDialog()
     End Sub
 
     Private Sub btnSystemUser_Click(sender As Object, e As EventArgs) Handles btnSystemUser.Click
-        UserMaintenance.StartPosition = FormStartPosition.CenterParent
-        UserMaintenance.WindowState = FormWindowState.Maximized
+        UserMaintenance.StartPosition = FormStartPosition.Manual
+        UserMaintenance.WindowState = FormWindowState.Normal
         UserMaintenance.ShowDialog()
     End Sub
 
     Private Sub btnBookLocation_Click(sender As Object, e As EventArgs) Handles btnBookLocation.Click
-        BookLocationForm.StartPosition = FormStartPosition.CenterParent
-        BookLocationForm.WindowState = FormWindowState.Maximized
+        BookLocationForm.StartPosition = FormStartPosition.Manual
+        BookLocationForm.WindowState = FormWindowState.Normal
         BookLocationForm.ShowDialog()
     End Sub
 
@@ -96,14 +89,22 @@ Public Class Form1
 
     Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
         'Dim BookSearch As New Form
-        BookSearch.StartPosition = FormStartPosition.CenterParent
-        BookSearch.WindowState = FormWindowState.Maximized
+        BookSearch.StartPosition = FormStartPosition.Manual
+        BookSearch.WindowState = FormWindowState.Normal
         BookSearch.Show()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        BorrowersMenu.StartPosition = FormStartPosition.Manual
+        BorrowersMenu.WindowState = FormWindowState.Normal
+        BorrowersMenu.Show()
+    End Sub
 
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If MsgBox("Are your sure you want to Logout?", vbYesNo) = vbYes Then
+            Me.Close()
+            UserLogin.Close()
+        End If
+    End Sub
 
-    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
-    '    
-    'End Sub
 End Class

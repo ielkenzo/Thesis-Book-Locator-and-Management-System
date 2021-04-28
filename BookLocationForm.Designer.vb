@@ -27,14 +27,14 @@ Partial Class BookLocationForm
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btnNew = New System.Windows.Forms.ToolStripButton()
         Me.btnEdit = New System.Windows.Forms.ToolStripButton()
         Me.btnDelete = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
         Me.cbShelfCode = New System.Windows.Forms.ComboBox()
         Me.cbShelfRow = New System.Windows.Forms.ComboBox()
         Me.cbShelfCol = New System.Windows.Forms.ComboBox()
@@ -107,10 +107,10 @@ Partial Class BookLocationForm
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(62, Byte), Integer))
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.ToolStrip1)
-        Me.Panel2.Controls.Add(Me.PictureBox1)
         Me.Panel2.Controls.Add(Me.btnCancel)
         Me.Panel2.Controls.Add(Me.btnSave)
+        Me.Panel2.Controls.Add(Me.ToolStrip1)
+        Me.Panel2.Controls.Add(Me.PictureBox1)
         Me.Panel2.Controls.Add(Me.cbShelfCode)
         Me.Panel2.Controls.Add(Me.cbShelfRow)
         Me.Panel2.Controls.Add(Me.cbShelfCol)
@@ -125,8 +125,42 @@ Partial Class BookLocationForm
         Me.Panel2.Location = New System.Drawing.Point(0, 43)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(357, 628)
+        Me.Panel2.Size = New System.Drawing.Size(357, 689)
         Me.Panel2.TabIndex = 1
+        '
+        'btnCancel
+        '
+        Me.btnCancel.AutoRoundedCorners = True
+        Me.btnCancel.BorderRadius = 21
+        Me.btnCancel.CheckedState.Parent = Me.btnCancel
+        Me.btnCancel.CustomImages.Parent = Me.btnCancel
+        Me.btnCancel.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.HoverState.Parent = Me.btnCancel
+        Me.btnCancel.Location = New System.Drawing.Point(30, 556)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.ShadowDecoration.Parent = Me.btnCancel
+        Me.btnCancel.Size = New System.Drawing.Size(132, 45)
+        Me.btnCancel.TabIndex = 19
+        Me.btnCancel.Text = "CANCEL"
+        '
+        'btnSave
+        '
+        Me.btnSave.AutoRoundedCorners = True
+        Me.btnSave.BorderRadius = 21
+        Me.btnSave.CheckedState.Parent = Me.btnSave
+        Me.btnSave.CustomImages.Parent = Me.btnSave
+        Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(227, Byte), Integer))
+        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.HoverState.Parent = Me.btnSave
+        Me.btnSave.Location = New System.Drawing.Point(179, 556)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.ShadowDecoration.Parent = Me.btnSave
+        Me.btnSave.Size = New System.Drawing.Size(132, 45)
+        Me.btnSave.TabIndex = 18
+        Me.btnSave.Text = "SAVE"
         '
         'ToolStrip1
         '
@@ -177,39 +211,6 @@ Partial Class BookLocationForm
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
-        'btnCancel
-        '
-        Me.btnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.btnCancel.FlatAppearance.BorderSize = 0
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.cancel
-        Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancel.Location = New System.Drawing.Point(183, 551)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(132, 53)
-        Me.btnCancel.TabIndex = 15
-        Me.btnCancel.Text = "CANCEL"
-        Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCancel.UseVisualStyleBackColor = False
-        '
-        'btnSave
-        '
-        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(227, Byte), Integer))
-        Me.btnSave.FlatAppearance.BorderSize = 0
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.save_file_option
-        Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(29, 551)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(132, 53)
-        Me.btnSave.TabIndex = 14
-        Me.btnSave.Text = "SAVE"
-        Me.btnSave.UseVisualStyleBackColor = False
-        '
         'cbShelfCode
         '
         Me.cbShelfCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -226,7 +227,7 @@ Partial Class BookLocationForm
         Me.cbShelfRow.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cbShelfRow.FormattingEnabled = True
-        Me.cbShelfRow.Items.AddRange(New Object() {"1", "2", "3"})
+        Me.cbShelfRow.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.cbShelfRow.Location = New System.Drawing.Point(11, 344)
         Me.cbShelfRow.Name = "cbShelfRow"
         Me.cbShelfRow.Size = New System.Drawing.Size(323, 31)
@@ -254,7 +255,6 @@ Partial Class BookLocationForm
         Me.cbStatus.Name = "cbStatus"
         Me.cbStatus.Size = New System.Drawing.Size(325, 31)
         Me.cbStatus.TabIndex = 10
-        Me.cbStatus.Text = "-- CHOOSE--"
         '
         'Label6
         '
@@ -322,7 +322,7 @@ Partial Class BookLocationForm
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(357, 43)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(948, 628)
+        Me.Panel3.Size = New System.Drawing.Size(948, 689)
         Me.Panel3.TabIndex = 2
         '
         'Panel5
@@ -331,7 +331,7 @@ Partial Class BookLocationForm
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 58)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(948, 570)
+        Me.Panel5.Size = New System.Drawing.Size(948, 631)
         Me.Panel5.TabIndex = 1
         '
         'DGVBookLocation
@@ -348,7 +348,7 @@ Partial Class BookLocationForm
         Me.DGVBookLocation.RowHeadersWidth = 51
         Me.DGVBookLocation.RowTemplate.Height = 24
         Me.DGVBookLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVBookLocation.Size = New System.Drawing.Size(948, 570)
+        Me.DGVBookLocation.Size = New System.Drawing.Size(948, 631)
         Me.DGVBookLocation.TabIndex = 0
         '
         'ContextMenuStrip1
@@ -420,7 +420,7 @@ Partial Class BookLocationForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1305, 671)
+        Me.ClientSize = New System.Drawing.Size(1305, 732)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -428,7 +428,7 @@ Partial Class BookLocationForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "BookLocationForm"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "BookLocationForm"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -462,8 +462,6 @@ Partial Class BookLocationForm
     Friend WithEvents tbBookID As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents btnCancel As Button
-    Friend WithEvents btnSave As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Button3 As Button
@@ -480,4 +478,6 @@ Partial Class BookLocationForm
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents TSMEdit As ToolStripMenuItem
     Friend WithEvents TSMdelete As ToolStripMenuItem
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
 End Class

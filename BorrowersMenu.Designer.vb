@@ -28,15 +28,15 @@ Partial Class BorrowersMenu
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PB_checkout = New System.Windows.Forms.PictureBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PB_searchBook = New System.Windows.Forms.PictureBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PB_checkin = New System.Windows.Forms.PictureBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
@@ -47,17 +47,18 @@ Partial Class BorrowersMenu
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_checkout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_searchBook, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PB_checkin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel10.SuspendLayout()
@@ -92,13 +93,14 @@ Partial Class BorrowersMenu
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(20, 8)
+        Me.Label4.Location = New System.Drawing.Point(3, 8)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(263, 28)
+        Me.Label4.Size = New System.Drawing.Size(328, 35)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "BORROWERS MAIN MENU"
+        Me.Label4.Visible = False
         '
         'PictureBox4
         '
@@ -116,23 +118,24 @@ Partial Class BorrowersMenu
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
-        Me.Panel2.Controls.Add(Me.PictureBox1)
+        Me.Panel2.Controls.Add(Me.PB_checkout)
         Me.Panel2.Controls.Add(Me.Panel5)
         Me.Panel2.Location = New System.Drawing.Point(55, 230)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(261, 295)
         Me.Panel2.TabIndex = 1
         '
-        'PictureBox1
+        'PB_checkout
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.checkout
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 61)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(261, 234)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.PB_checkout.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_checkout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PB_checkout.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.checkout
+        Me.PB_checkout.Location = New System.Drawing.Point(0, 61)
+        Me.PB_checkout.Name = "PB_checkout"
+        Me.PB_checkout.Size = New System.Drawing.Size(261, 234)
+        Me.PB_checkout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_checkout.TabIndex = 1
+        Me.PB_checkout.TabStop = False
         '
         'Panel5
         '
@@ -158,23 +161,24 @@ Partial Class BorrowersMenu
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Panel3.Controls.Add(Me.PictureBox2)
+        Me.Panel3.Controls.Add(Me.PB_searchBook)
         Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Location = New System.Drawing.Point(368, 230)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(261, 295)
         Me.Panel3.TabIndex = 2
         '
-        'PictureBox2
+        'PB_searchBook
         '
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox2.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.search__1_
-        Me.PictureBox2.Location = New System.Drawing.Point(0, 61)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(261, 234)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 2
-        Me.PictureBox2.TabStop = False
+        Me.PB_searchBook.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_searchBook.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PB_searchBook.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.search__1_
+        Me.PB_searchBook.Location = New System.Drawing.Point(0, 61)
+        Me.PB_searchBook.Name = "PB_searchBook"
+        Me.PB_searchBook.Size = New System.Drawing.Size(261, 234)
+        Me.PB_searchBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_searchBook.TabIndex = 2
+        Me.PB_searchBook.TabStop = False
         '
         'Panel6
         '
@@ -200,23 +204,24 @@ Partial Class BorrowersMenu
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.Transparent
-        Me.Panel4.Controls.Add(Me.PictureBox3)
+        Me.Panel4.Controls.Add(Me.PB_checkin)
         Me.Panel4.Controls.Add(Me.Panel7)
         Me.Panel4.Location = New System.Drawing.Point(681, 230)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(261, 295)
         Me.Panel4.TabIndex = 2
         '
-        'PictureBox3
+        'PB_checkin
         '
-        Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox3.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.check_in_desk
-        Me.PictureBox3.Location = New System.Drawing.Point(0, 61)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(261, 234)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 2
-        Me.PictureBox3.TabStop = False
+        Me.PB_checkin.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PB_checkin.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PB_checkin.Image = Global.Thesis_Book_Locator_and_Management_System.My.Resources.Resources.check_in_desk
+        Me.PB_checkin.Location = New System.Drawing.Point(0, 61)
+        Me.PB_checkin.Name = "PB_checkin"
+        Me.PB_checkin.Size = New System.Drawing.Size(261, 234)
+        Me.PB_checkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PB_checkin.TabIndex = 2
+        Me.PB_checkin.TabStop = False
         '
         'Panel7
         '
@@ -322,6 +327,7 @@ Partial Class BorrowersMenu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1023, 814)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel4)
@@ -331,22 +337,22 @@ Partial Class BorrowersMenu
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BorrowersMenu"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "BorrowersMenu"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_checkout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_searchBook, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.Panel4.ResumeLayout(False)
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PB_checkin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel8.ResumeLayout(False)
@@ -366,11 +372,11 @@ Partial Class BorrowersMenu
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PB_checkout As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PB_searchBook As PictureBox
+    Friend WithEvents PB_checkin As PictureBox
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Panel8 As Panel
@@ -382,4 +388,5 @@ Partial Class BorrowersMenu
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel11 As Panel
     Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class
