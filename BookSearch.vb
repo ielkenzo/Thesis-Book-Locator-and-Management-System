@@ -5,44 +5,6 @@ Public Class BookSearch
     Private dba As MySqlDataAdapter
     Private dbs As DataSet
     Public BookID As String
-    'Public Sub btn_click(sender As Object, e As EventArgs)
-    '    Dim bkid() As String
-    '    bkid = sender.tag.ToString.Split(" ")
-    '    BookID = bkid(1)
-    '    Dim dba As New MySqlDataAdapter()
-    '    dba = New MySqlDataAdapter("Select BookID, Title, Adviser from book_tbl where BookID='" & BookID.Trim & "'", dbconn)
-    '    Dim dbs As New DataSet
-    '    dbs.Clear()
-    '    dba.Fill(dbs)
-    '    If dbs.Tables(0).DefaultView.Count > 0 Then
-    '        BookDetails.lblBookID.Text = dbs.Tables(0).DefaultView.Item(0).Item(0).ToString
-    '        BookDetails.lblTitle.Text = dbs.Tables(0).DefaultView.Item(0).Item("Title").ToString
-    '        BookDetails.lbl_adviser.Text = dbs.Tables(0).DefaultView.Item(0).Item("Adviser").ToString
-    '    End If
-
-    '    dba = New MySqlDataAdapter("Select * from author_tbl where BookID='" & BookID.Trim & "'", dbconn)
-    '    dbs.Reset()
-    '    dba.Fill(dbs)
-    '    If dbs.Tables(0).DefaultView.Count > 0 Then
-    '        'BookDetails.ListBox1.Items.Clear()
-    '        BookDetails.lbl_author.Text = ""
-    '        For i As Integer = 0 To dbs.Tables(0).DefaultView.Count - 1
-    '            '  BookDetails.ListBox1.Items.Add(dbs.Tables(0).DefaultView.Item(i).Item("FullName").ToString)
-    '            BookDetails.lbl_author.Text &= dbs.Tables(0).DefaultView.Item(i).Item("FullName").ToString & vbCrLf
-    '        Next
-    '    End If
-
-    '    dba = New MySqlDataAdapter("Select ShelfCode,RowNo,ColumnNo from booklocation_tbl where BookID='" & BookID.Trim & "'", dbconn)
-    '    dbs.Reset()
-    '    dba.Fill(dbs)
-    '    If dbs.Tables(0).DefaultView.Count > 0 Then
-    '        BookDetails.lblShelfcode.Text = dbs.Tables(0).DefaultView.Item(0).Item(0).ToString
-    '        BookDetails.lblshelfrow.Text = dbs.Tables(0).DefaultView.Item(0).Item(1).ToString
-    '        BookDetails.lblshelfcol.Text = dbs.Tables(0).DefaultView.Item(0).Item(2).ToString
-    '    End If
-    '    BookDetails.ShowDialog()
-
-    'End Sub
 
 
     Private Sub BookSearch_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -95,40 +57,7 @@ Public Class BookSearch
 
 
 
-    'Private Sub tbSearchBook_TextChanged(sender As Object, e As EventArgs) Handles tbSearchBook.TextChanged
-    '    If tbSearchBook.Text = Nothing Then
-    '        resetColor()
-    '    Else
-    '        Dim colz() As String = searchBookTitle(tbSearchBook.Text.Trim)
-    '        If colz.Count > 0 Then
-    '            resetColor()
-    '            For x As Integer = 0 To colz.Count - 1
-    '                searchbook(colz(x))
-    '            Next
-    '        Else
-    '            MsgBox("No result found")
-    '            resetColor()
-    '        End If
 
-    '    End If
-    'End Sub
-
-    'Function searchBook(id As String) As String()
-    '    Dim dba As New MySqlDataAdapter("Select distinct BookID, Title from searchbook_view where Title like '%" & id & "%' or AuthorName like '%" & id & "%'", dbconn)
-    '    Dim dbs As New DataSet
-    '    dbs.Reset()
-    '    dba.Fill(dbs)
-    '    Dim i As Integer
-    '    Dim ids() As String = {}
-    '    If dbs.Tables(0).DefaultView.Count > 0 Then
-    '        Dim cnt As Integer = dbs.Tables(0).DefaultView.Count
-    '        ids = New String(cnt) {}
-    '        For i = 0 To dbs.Tables(0).DefaultView.Count - 1
-    '            ids(i) = dbs.Tables(0).DefaultView.Item(i).Item(1).ToString
-    '        Next
-    '    End If
-    '    Return ids
-    'End Function
     Private Sub tbSearchBook_KeyDown(sender As Object, e As KeyEventArgs) Handles tbSearchBook.KeyDown
         If e.KeyCode = Keys.Enter Then
             If tbSearchBook.Text = Nothing Then
@@ -266,8 +195,9 @@ Public Class BookSearch
         If dbs.Tables(0).DefaultView.Count > 0 Then
             Dim researchers As String = ""
             For i As Integer = 0 To dbs.Tables(0).DefaultView.Count - 1
-                researchers = dbs.Tables(0).DefaultView.Item(i).Item("FullName").ToString & vbCrLf
+                researchers = researchers & dbs.Tables(0).DefaultView.Item(i).Item("FullName").ToString & vbCrLf
             Next
+            'MsgBox(researchers)
             BookDetails.lbl_author.Text = researchers
         End If
 

@@ -27,6 +27,8 @@ Partial Class BookDetails
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.status = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.lbl_adviser = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lbl_author = New System.Windows.Forms.Label()
@@ -44,8 +46,6 @@ Partial Class BookDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.status = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -109,6 +109,25 @@ Partial Class BookDetails
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Other Information"
         '
+        'status
+        '
+        Me.status.AutoSize = True
+        Me.status.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.status.Location = New System.Drawing.Point(126, 309)
+        Me.status.Name = "status"
+        Me.status.Size = New System.Drawing.Size(71, 23)
+        Me.status.TabIndex = 12
+        Me.status.Text = "IN/OUT"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(20, 309)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(91, 23)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Availability"
+        '
         'lbl_adviser
         '
         Me.lbl_adviser.AutoSize = True
@@ -132,22 +151,21 @@ Partial Class BookDetails
         '
         Me.lbl_author.AutoSize = True
         Me.lbl_author.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_author.Location = New System.Drawing.Point(118, 165)
-        Me.lbl_author.MinimumSize = New System.Drawing.Size(400, 100)
+        Me.lbl_author.Location = New System.Drawing.Point(118, 169)
+        Me.lbl_author.MaximumSize = New System.Drawing.Size(400, 0)
         Me.lbl_author.Name = "lbl_author"
-        Me.lbl_author.Size = New System.Drawing.Size(400, 100)
+        Me.lbl_author.Size = New System.Drawing.Size(105, 23)
         Me.lbl_author.TabIndex = 8
         Me.lbl_author.Text = "RESEACHER"
         '
         'lblTitle
         '
         Me.lblTitle.AutoEllipsis = True
-        Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.Location = New System.Drawing.Point(118, 94)
         Me.lblTitle.MinimumSize = New System.Drawing.Size(400, 50)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(400, 50)
+        Me.lblTitle.Size = New System.Drawing.Size(400, 71)
         Me.lblTitle.TabIndex = 5
         Me.lblTitle.Text = "Title"
         '
@@ -238,7 +256,7 @@ Partial Class BookDetails
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 165)
+        Me.Label3.Location = New System.Drawing.Point(20, 169)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(100, 23)
         Me.Label3.TabIndex = 2
@@ -284,25 +302,6 @@ Partial Class BookDetails
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 309)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(91, 23)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Availability"
-        '
-        'status
-        '
-        Me.status.AutoSize = True
-        Me.status.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.status.Location = New System.Drawing.Point(126, 309)
-        Me.status.Name = "status"
-        Me.status.Size = New System.Drawing.Size(71, 23)
-        Me.status.TabIndex = 12
-        Me.status.Text = "IN/OUT"
         '
         'BookDetails
         '

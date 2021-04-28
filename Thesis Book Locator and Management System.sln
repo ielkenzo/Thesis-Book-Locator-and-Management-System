@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Thesis Book Locator and Management System", "Thesis Book Locator and Management System.vbproj", "{53CB2EB5-C83C-4137-9FA5-DE56031722AB}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ThesisLocator_Installer", "ThesisLocator_Installer\ThesisLocator_Installer.vdproj", "{6B167F5A-4C0F-4870-BF04-DD5BD17F89F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{53CB2EB5-C83C-4137-9FA5-DE56031722AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53CB2EB5-C83C-4137-9FA5-DE56031722AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53CB2EB5-C83C-4137-9FA5-DE56031722AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B167F5A-4C0F-4870-BF04-DD5BD17F89F5}.Debug|Any CPU.ActiveCfg = Debug
+		{6B167F5A-4C0F-4870-BF04-DD5BD17F89F5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
