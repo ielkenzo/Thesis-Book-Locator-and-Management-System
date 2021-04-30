@@ -30,7 +30,7 @@ Public Class Form1
     End Sub
 
     Sub loadTotalBooks()
-        Dim dba As New MySqlDataAdapter("Select count(*) from book_tbl", dbconn)
+        Dim dba As New MySqlDataAdapter("Select count(*) from booklocation_tbl", dbconn)
         Dim dbs As New DataSet
         dbs.Reset()
         dba.Fill(dbs)
@@ -90,7 +90,7 @@ Public Class Form1
     Private Sub btnSearchBook_Click(sender As Object, e As EventArgs) Handles btnSearchBook.Click
         'Dim BookSearch As New Form
         BookSearch.StartPosition = FormStartPosition.Manual
-        BookSearch.WindowState = FormWindowState.Normal
+        BookSearch.WindowState = FormWindowState.Maximized
         BookSearch.Show()
     End Sub
 
@@ -107,4 +107,25 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If Panel15.Visible = False Then
+            Panel15.Visible = True
+        Else
+            Panel15.Visible = False
+        End If
+    End Sub
+
+    Private Sub btn_Reports_Click(sender As Object, e As EventArgs) Handles btn_Reports.Click
+        'QRCodeGenerator.StartPosition = FormStartPosition.Manual
+        'QRCodeGenerator.WindowState = FormWindowState.Normal
+        QRCodeGenerator.ShowDialog()
+    End Sub
+
+    Private Sub btn_backup_Click(sender As Object, e As EventArgs) Handles btn_backup.Click
+        BackUpDatabase.ShowDialog()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        RestoreDatabase.ShowDialog()
+    End Sub
 End Class

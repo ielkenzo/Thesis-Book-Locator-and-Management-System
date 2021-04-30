@@ -24,6 +24,7 @@ Partial Class BookDetails
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BookDetails))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -46,6 +47,7 @@ Partial Class BookDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -57,12 +59,25 @@ Partial Class BookDetails
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(227, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(806, 66)
         Me.Panel1.TabIndex = 0
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label9.Location = New System.Drawing.Point(11, 13)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(227, 41)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "BOOK DETAILS"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel2
         '
@@ -72,7 +87,7 @@ Partial Class BookDetails
         Me.Panel2.Location = New System.Drawing.Point(0, 66)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(806, 506)
+        Me.Panel2.Size = New System.Drawing.Size(806, 586)
         Me.Panel2.TabIndex = 1
         '
         'Panel4
@@ -82,7 +97,7 @@ Partial Class BookDetails
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(244, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(562, 506)
+        Me.Panel4.Size = New System.Drawing.Size(562, 586)
         Me.Panel4.TabIndex = 3
         '
         'GroupBox1
@@ -104,7 +119,7 @@ Partial Class BookDetails
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox1.Size = New System.Drawing.Size(562, 506)
+        Me.GroupBox1.Size = New System.Drawing.Size(562, 586)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Other Information"
@@ -113,7 +128,7 @@ Partial Class BookDetails
         '
         Me.status.AutoSize = True
         Me.status.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.status.Location = New System.Drawing.Point(126, 309)
+        Me.status.Location = New System.Drawing.Point(118, 359)
         Me.status.Name = "status"
         Me.status.Size = New System.Drawing.Size(71, 23)
         Me.status.TabIndex = 12
@@ -122,7 +137,7 @@ Partial Class BookDetails
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 309)
+        Me.Label7.Location = New System.Drawing.Point(20, 359)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(91, 23)
         Me.Label7.TabIndex = 11
@@ -132,7 +147,7 @@ Partial Class BookDetails
         '
         Me.lbl_adviser.AutoSize = True
         Me.lbl_adviser.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_adviser.Location = New System.Drawing.Point(126, 269)
+        Me.lbl_adviser.Location = New System.Drawing.Point(118, 318)
         Me.lbl_adviser.Name = "lbl_adviser"
         Me.lbl_adviser.Size = New System.Drawing.Size(81, 23)
         Me.lbl_adviser.TabIndex = 10
@@ -141,7 +156,7 @@ Partial Class BookDetails
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(47, 269)
+        Me.Label8.Location = New System.Drawing.Point(47, 318)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(65, 23)
         Me.Label8.TabIndex = 9
@@ -149,10 +164,10 @@ Partial Class BookDetails
         '
         'lbl_author
         '
+        Me.lbl_author.AutoEllipsis = True
         Me.lbl_author.AutoSize = True
         Me.lbl_author.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_author.Location = New System.Drawing.Point(118, 169)
-        Me.lbl_author.MaximumSize = New System.Drawing.Size(400, 0)
         Me.lbl_author.Name = "lbl_author"
         Me.lbl_author.Size = New System.Drawing.Size(105, 23)
         Me.lbl_author.TabIndex = 8
@@ -189,9 +204,9 @@ Partial Class BookDetails
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Location = New System.Drawing.Point(31, 345)
+        Me.GroupBox2.Location = New System.Drawing.Point(31, 410)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(506, 149)
+        Me.GroupBox2.Size = New System.Drawing.Size(506, 164)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Book Location Coordinate"
@@ -200,7 +215,7 @@ Partial Class BookDetails
         '
         Me.lblshelfcol.AutoSize = True
         Me.lblshelfcol.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblshelfcol.Location = New System.Drawing.Point(143, 119)
+        Me.lblshelfcol.Location = New System.Drawing.Point(147, 120)
         Me.lblshelfcol.Name = "lblshelfcol"
         Me.lblshelfcol.Size = New System.Drawing.Size(118, 23)
         Me.lblshelfcol.TabIndex = 6
@@ -210,7 +225,7 @@ Partial Class BookDetails
         '
         Me.lblshelfrow.AutoSize = True
         Me.lblshelfrow.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblshelfrow.Location = New System.Drawing.Point(143, 81)
+        Me.lblshelfrow.Location = New System.Drawing.Point(147, 82)
         Me.lblshelfrow.Name = "lblshelfrow"
         Me.lblshelfrow.Size = New System.Drawing.Size(91, 23)
         Me.lblshelfrow.TabIndex = 5
@@ -220,7 +235,7 @@ Partial Class BookDetails
         '
         Me.lblShelfcode.AutoSize = True
         Me.lblShelfcode.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblShelfcode.Location = New System.Drawing.Point(143, 45)
+        Me.lblShelfcode.Location = New System.Drawing.Point(147, 46)
         Me.lblShelfcode.Name = "lblShelfcode"
         Me.lblShelfcode.Size = New System.Drawing.Size(97, 23)
         Me.lblShelfcode.TabIndex = 4
@@ -229,7 +244,7 @@ Partial Class BookDetails
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(14, 119)
+        Me.Label6.Location = New System.Drawing.Point(18, 120)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(112, 23)
         Me.Label6.TabIndex = 3
@@ -238,7 +253,7 @@ Partial Class BookDetails
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(14, 81)
+        Me.Label5.Location = New System.Drawing.Point(18, 82)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 23)
         Me.Label5.TabIndex = 2
@@ -247,7 +262,7 @@ Partial Class BookDetails
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(14, 45)
+        Me.Label4.Location = New System.Drawing.Point(18, 46)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(92, 23)
         Me.Label4.TabIndex = 1
@@ -256,7 +271,7 @@ Partial Class BookDetails
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 169)
+        Me.Label3.Location = New System.Drawing.Point(12, 169)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(100, 23)
         Me.Label3.TabIndex = 2
@@ -287,7 +302,7 @@ Partial Class BookDetails
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(244, 506)
+        Me.Panel3.Size = New System.Drawing.Size(244, 586)
         Me.Panel3.TabIndex = 2
         '
         'PictureBox1
@@ -307,7 +322,7 @@ Partial Class BookDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(806, 572)
+        Me.ClientSize = New System.Drawing.Size(806, 652)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -315,7 +330,8 @@ Partial Class BookDetails
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "BookDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Book Details"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
@@ -351,4 +367,5 @@ Partial Class BookDetails
     Friend WithEvents Label8 As Label
     Friend WithEvents status As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label9 As Label
 End Class
